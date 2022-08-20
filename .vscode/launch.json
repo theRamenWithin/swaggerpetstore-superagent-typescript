@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Current File",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-r",
+                "dotenv/config",
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+                "--timeout",
+                "0",
+                "--colors",
+                "${file}",
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "protocol": "inspector"
+        },
+        {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug All Files",
+        "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+        "args": [
+            "-r",
+            "dotenv/config",
+            "-r",
+            "ts-node/register",
+            "-r",
+            "tsconfig-paths/register",
+            "--timeout",
+            "0",
+            "--colors",
+            "${workspaceFolder}/src/tests/*_Spec.ts",
+        ],
+        "console": "internalConsole",
+        "internalConsoleOptions": "openOnSessionStart",
+        "protocol": "inspector"
+        },
+    ]
+}
